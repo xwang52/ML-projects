@@ -6,7 +6,7 @@ warnings.filterwarnings('ignore')
 
 """
 The following is a K-means clustering algorithm for data training and testing given several commonly-used 
-hyperparameters. K-means is a unsupervised ML technique to group examples into clusters in a way such that 
+hyperparameters. K-means is an unsupervised ML technique to group examples into clusters in a way such that 
 the total distance of examples to their corresponding centroids are minimized. The number of centroids k is 
 pre-determined and the centroids are randomly initialized from the training sample (other initialization 
 techniques are also used in scikit-learn for fast convergence). Each example is assigned to the centroid that 
@@ -54,7 +54,7 @@ class Kmeans():
     for N in range(self.n_iter):
       for i in range(n):
         """
-        broadcast each example with the centroids, and use linalg.norm to calculate the distance
+        broadcast each example to the centroids, and use linalg.norm to calculate the distance
         of each example to the centroids, and finally find the cluster label by using argmin()
         """
         label = la.norm(centroids - df.iloc[i,:-1].values, ord = q, axis = 1).argmin()
